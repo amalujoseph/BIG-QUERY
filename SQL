@@ -1,0 +1,100 @@
+# COMMAND 1
+1.	SELECT *FROM `bigquery-public-data.bls.cpi_u`
+  WHERE period = "S03"
+#OUTPUT 1
+Row	series_id	year	period	value	footnote_codes	survey_abbreviation	seasonal_code	periodicity_code
+1	CUUS0000AA0	1997	S03	480.8	null	CU	U	S
+2	CUUS0000AA0	1998	S03	488.3	null	CU	U	S
+3	CUUS0000AA0	1999	S03	499.0	null	CU	U	S
+4	CUUS0000AA0	2000	S03	515.8	null	CU	U	S
+5	CUUS0000AA0	2001	S03	530.4	null	CU	U	S
+
+
+#COMMAND 2
+2.	SELECT * FROM `bigquery-public-data.bls.cpi_u` ORDER BY value DESC
+#OUTPUT 2
+Row	series_id	year	period	value	footnote_codes	survey_abbreviation	seasonal_code	periodicity_code
+1	CUURS48BSETE	2019	M01	2858.006	null	CU	U	R
+2	CUURS48BSETE	2018	M11	2858.006	null	CU	U	R
+
+
+#COMMAND 3
+3.	SELECT * FROM `bigquery-public-data.bls.cpi_u` ORDER BY period
+#OUTPUT 3
+Row	series_id	year	period	value	footnote_codes	survey_abbreviation	seasonal_code	periodicity_code
+1	CUSR0000SA0	1997	M01	159.4	null	CU	S	R
+2	CUSR0000SA0	1998	M01	162.0	null	CU	S	R
+
+#COMMAND 4
+4.	SELECT year FROM `bigquery-public-data.bls.cpi_u` ORDER BY value
+#OUTPUT 4
+Row	year	 
+1	2018	 
+2	2019	 
+3	2019	 
+4	2018	 
+5	2018	
+
+
+#COMMAND 5
+5.	SELECT SERIES_ID AVG FROM `bigquery-public-data.bls.cpi_u`
+#OUTPUT 5
+Row	AVG	 
+1	CUSR0000SA0	 
+2	CUSR0000SA0	 
+3	CUSR0000SA0	 
+4	CUSR0000SA0	 
+5	CUSR0000SA0	
+
+
+#COMMAND 6
+6.	SELECT SERIES_ID AVG FROM `bigquery-public-data.bls.cpi_u` ORDER BY value
+#OUTPUT6
+Row	AVG
+1	CUUR0000SERA01
+2	CUUR0000SERA01
+3	CUSR0000SERA01
+4	CUSR0000SERA01
+5	CUUR0000SERA01
+
+#COMMAND 7
+7.	SELECT SERIES_ID MAX FROM `bigquery-public-data.bls.cpi_u` ORDER BY year
+#OUTPUT 7
+Row	MAX
+1	CUURS12BSAM
+2	CUURS12BSAM
+3	CUURS12BSAM
+4	CUURS12BSAM
+5	CUURS12BSAM
+
+#COMMAND 8
+8.	SELECT VALUE AVG FROM `bigquery-public-data.bls.cpi_u` ORDER BY year
+#OUTPUT8
+Row	AVG	 
+1	247.1	 
+2	249.3	 
+3	248.9	 
+4	248.7	 
+5	249.0	
+
+#COMMAND 9
+9.	SELECT * FROM `bigquery-public-data.bls.cpi_u` ORDER BY year
+#OUTPUT 9
+Row	series_id	year	period	value	footnote_codes	survey_abbreviation	seasonal_code	periodicity_code	area_code	area_name	item_code	item_name	date	 
+1	CUURS12BSAM	1997	M03	247.1	null	CU	U	R	S12B	Philadelphia-Camden-Wilmington, PA-NJ-DE-MD	SAM	Medical care	1997-03-01	 
+2	CUURS12BSAM	1997	M12	249.3	null	CU	U	R	S12B	Philadelphia-Camden-Wilmington, PA-NJ-DE-MD	SAM	Medical care	1997-12-01	 
+3	CUURS12BSAM	1997	M11	248.9	null	CU	U	R	S12B	Philadelphia-Camden-Wilmington, PA-NJ-DE-MD	SAM	Medical care	1997-11-01	 
+4	CUURS12BSAM	1997	M10	248.7	null	CU	U	R	S12B	Philadelphia-Camden-Wilmington, PA-NJ-DE-MD	SAM	Medical care	1997-10-01	 
+5	CUURS12BSAM	1997	M09	249.0	null	CU	U	R	S12B	Philadelphia-Camden-Wilmington, PA-NJ-DE-MD	SAM	Medical care	1997-09-01	
+
+#COMMAND 10
+10.	SELECT footnote_codes FROM `bigquery-public-data.bls.cpi_u` ORDER BY period
+#OUTPUT 10
+Row	footnote_codes	 
+1	null	 
+2	null	 
+3	null	 
+4	null	 
+5	null	
+
+
